@@ -33,11 +33,13 @@ def main():
 
     for source_folder in generate_subfolder_paths(config["source_folder"]):
         organize_images(source_folder, device)
+    print("task complete")
 
 
 if __name__ == '__main__':
     config = load_yaml_config("config/config.yaml")
     schedule.every(config["interval"]).hours.do(main)
+    main()
     while True:
         schedule.run_pending()
         time.sleep(1)
