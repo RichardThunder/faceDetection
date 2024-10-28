@@ -1,0 +1,6 @@
+source_folder:
+person_folder: face
+no_person_folder: to_delete
+target_size_kb: 2048
+threshold: 0.15
+interval: 2
