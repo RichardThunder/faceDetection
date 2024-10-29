@@ -1,4 +1,4 @@
-source_folder: /Users/richard/code/Archived/weibo-docker
+source_folder:
 person_folder: face
 no_person_folder: to_delete
 target_size_kb: 2048
