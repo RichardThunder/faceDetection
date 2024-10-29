@@ -67,7 +67,16 @@ def detect_face(image_path,model, device,threshold):
     返回:
     bool: 如果检测到人脸，返回 True；否则返回 False。
     """
-    img = Image.open(image_path)
+
+
+    try:
+        img = Image.open(image_path)
+    except FileNotFoundError:
+        print(f"文件未找到: {image_path}")
+    except IOError:
+        print("无法打开图片，请检查文件格式或损坏情况")
+    except Exception as e:
+        print(f"发生错误: {e}")
     result = model(image_path, device=device)
     if is_person_detected(result, img.width, img.height, threshold):
         return True

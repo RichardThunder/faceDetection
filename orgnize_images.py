@@ -1,3 +1,4 @@
+import datetime
 import os
 import shutil
 
@@ -41,9 +42,11 @@ def organize_images(source_folder, device):
                 compress_image_to_target_size(file_path)
                 shutil.move(file_path, face_folder)
                 print(f'已移动文件: {filename} 到 {face_folder}')
+                print(f"task complete:{datetime.datetime.now()}")
             else:
                 shutil.move(file_path, delete_folder)
                 print(f'已移动文件: {filename} 到 {delete_folder}')
+                print(f"task complete:{datetime.datetime.now()}")
 
 
 def compress_image_to_target_size(file_path):

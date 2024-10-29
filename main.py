@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 
 import torch
 
@@ -33,7 +34,7 @@ def main():
 
     for source_folder in generate_subfolder_paths(config["source_folder"]):
         organize_images(source_folder, device)
-    print("task complete")
+    print(f"task complete:{datetime.now()}")
 
 
 if __name__ == '__main__':
